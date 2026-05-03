@@ -5,12 +5,25 @@ const sidebars: SidebarsConfig = {
     {type: 'doc', id: 'installation/index', label: 'Overview'},
     {
       type: 'category',
-      label: 'Self-Host Installation',
+      label: 'Planning',
       items: [
         'installation/requirements',
-        'installation/deployment',
         'installation/configuration',
         'installation/upgrade',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Docker',
+      items: [
+        'installation/deployment',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Kubernetes',
+      items: [
+        'installation/kubernetes',
       ],
     },
   ],
