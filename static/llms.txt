@@ -1,0 +1,36 @@
+# MaNoir Documentation
+
+> Documentation for MaNoir, a self-hosted home platform covering installation, operation, and plugin extension.
+
+MaNoir brings together administration, home automation, daily life management, and possession tracking in a system you install and operate yourself.
+
+Base URL: https://manoir-app.github.io
+
+## Main Documentation
+
+- [Self-Hosted Installation](https://manoir-app.github.io/docs/installation): Install and operate MaNoir on infrastructure you control, with Docker as the most concrete current path and Kubernetes guidance for small clusters.
+- [User Guide](https://manoir-app.github.io/docs/user-guide): Use MaNoir for administration, home automation, daily life workflows, and possession management.
+- [Developer Guide](https://manoir-app.github.io/docs/developer): Extend MaNoir by implementing and publishing plugins.
+
+## Installation
+
+- [Requirements](https://manoir-app.github.io/docs/installation/requirements): Hardware and software prerequisites.
+- [Configuration](https://manoir-app.github.io/docs/installation/configuration): Shared runtime settings and secrets.
+- [Docker Deployment](https://manoir-app.github.io/docs/installation/deployment): Current Docker-based installation flow.
+- [Kubernetes Deployment](https://manoir-app.github.io/docs/installation/kubernetes): Initial guidance for small-cluster deployments.
+- [Upgrade](https://manoir-app.github.io/docs/installation/upgrade): Upgrade an existing installation.
+
+## User Guide
+
+- [Administration](https://manoir-app.github.io/docs/user-guide/administration): Manage users, roles, and system settings.
+- [Home Automation](https://manoir-app.github.io/docs/user-guide/home-automation): Control devices, automations, and scenes.
+- [Daily Life Management](https://manoir-app.github.io/docs/user-guide/daily-life): Work with calendars, tasks, and shopping lists.
+- [Possession Management](https://manoir-app.github.io/docs/user-guide/possessions): Track inventory, categories, and maintenance.
+
+## Developer
+
+- [Implementing Plugins](https://manoir-app.github.io/docs/developer/plugins): Create, package, and publish MaNoir plugins.
+
+## Full Text
+
+- [llms-full.txt](https://manoir-app.github.io/llms-full.txt): Expanded index of key documentation pages for LLM ingestion.

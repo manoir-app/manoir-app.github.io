@@ -1,0 +1,61 @@
+# MaNoir Documentation
+
+> Expanded documentation index for MaNoir, a self-hosted home platform.
+
+Base URL: https://manoir-app.github.io
+
+## Overview
+
+- [Documentation Home](https://manoir-app.github.io/): Documentation landing page for MaNoir.
+- [Self-Hosted Installation](https://manoir-app.github.io/docs/installation): Overview of deployment targets, Gaia bootstrap, and minimum vital services.
+- [User Guide](https://manoir-app.github.io/docs/user-guide): Entry point for all end-user and operator-facing usage domains.
+- [Developer Guide](https://manoir-app.github.io/docs/developer): Entry point for extending MaNoir with plugins.
+
+## Installation
+
+- [Overview](https://manoir-app.github.io/docs/installation): Install and operate MaNoir on infrastructure you control.
+- [Requirements](https://manoir-app.github.io/docs/installation/requirements): Hardware, OS, runtime, and other prerequisites.
+- [Configuration](https://manoir-app.github.io/docs/installation/configuration): Runtime settings, secrets, and shared configuration.
+- [Docker Deployment](https://manoir-app.github.io/docs/installation/deployment): Step-by-step Docker-based installation path.
+- [Kubernetes Deployment](https://manoir-app.github.io/docs/installation/kubernetes): Initial guidance for small-cluster deployments.
+- [Upgrade](https://manoir-app.github.io/docs/installation/upgrade): Upgrade and lifecycle guidance for existing installations.
+
+## User Guide: Administration
+
+- [Administration Overview](https://manoir-app.github.io/docs/user-guide/administration): Administration domain overview.
+- [Users](https://manoir-app.github.io/docs/user-guide/administration/users): Manage user accounts.
+- [Roles](https://manoir-app.github.io/docs/user-guide/administration/roles): Manage roles and permissions.
+- [Settings](https://manoir-app.github.io/docs/user-guide/administration/settings): Configure system-level settings.
+
+## User Guide: Home Automation
+
+- [Home Automation Overview](https://manoir-app.github.io/docs/user-guide/home-automation): Home automation domain overview.
+- [Devices](https://manoir-app.github.io/docs/user-guide/home-automation/devices): Manage connected devices.
+- [Automations](https://manoir-app.github.io/docs/user-guide/home-automation/automations): Create and manage automation rules.
+- [Scenes](https://manoir-app.github.io/docs/user-guide/home-automation/scenes): Define and trigger scenes.
+
+## User Guide: Daily Life Management
+
+- [Daily Life Overview](https://manoir-app.github.io/docs/user-guide/daily-life): Daily life management domain overview.
+- [Calendar](https://manoir-app.github.io/docs/user-guide/daily-life/calendar): Work with calendars and scheduling.
+- [Tasks](https://manoir-app.github.io/docs/user-guide/daily-life/tasks): Track tasks and household workflows.
+- [Shopping](https://manoir-app.github.io/docs/user-guide/daily-life/shopping): Manage shopping lists.
+
+## User Guide: Possession Management
+
+- [Possessions Overview](https://manoir-app.github.io/docs/user-guide/possessions): Possession management domain overview.
+- [Inventory](https://manoir-app.github.io/docs/user-guide/possessions/inventory): Track and browse belongings.
+- [Categories](https://manoir-app.github.io/docs/user-guide/possessions/categories): Organize possessions into categories.
+- [Maintenance](https://manoir-app.github.io/docs/user-guide/possessions/maintenance): Plan and review maintenance tasks.
+
+## Developer Guide
+
+- [Developer Overview](https://manoir-app.github.io/docs/developer): Overview of MaNoir plugin development.
+- [Plugins Overview](https://manoir-app.github.io/docs/developer/plugins): Start building MaNoir plugins.
+- [Getting Started](https://manoir-app.github.io/docs/developer/plugins/getting-started): Initial plugin implementation guidance.
+- [API Reference](https://manoir-app.github.io/docs/developer/plugins/api-reference): Reference material for plugin APIs.
+- [Publishing](https://manoir-app.github.io/docs/developer/plugins/publishing): Package and publish plugins.
+
+## Project Links
+
+- [GitHub Organization](https://github.com/manoir-app): Source repositories for MaNoir projects.
