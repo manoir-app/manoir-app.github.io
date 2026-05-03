@@ -1,23 +1,215 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
-
 .heroBanner {
-  padding: 4rem 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
+  padding: 2.5rem 0 1.5rem;
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
+.heroGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(320px, 0.8fr);
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.heroMain,
+.heroAside,
+.metricCard,
+.watchCard {
+  background: rgba(255, 250, 243, 0.76);
+  border: 1px solid rgba(41, 35, 29, 0.12);
+  border-radius: 28px;
+  box-shadow: 0 24px 80px rgba(77, 55, 33, 0.09);
+}
+
+.heroMain {
+  padding: 2rem;
+}
+
+.heroAside {
+  padding: 1.5rem;
+  background:
+    radial-gradient(circle at top right, rgba(165, 72, 49, 0.08), transparent 26%),
+    rgba(255, 250, 243, 0.76);
+}
+
+.eyebrow,
+.sectionEyebrow,
+.watchKicker,
+.metricLabel,
+.heroFacts dt {
+  margin: 0;
+  color: #9f4d37;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.heroTitle {
+  margin: 0.35rem 0 1rem;
+  font-size: clamp(3rem, 7vw, 5.25rem);
+  line-height: 0.93;
+  letter-spacing: -0.06em;
+}
+
+.heroAccent {
+  color: #9c4332;
+  font-style: italic;
+}
+
+.heroSubtitle,
+.sectionLead,
+.watchBody,
+.metricDetail,
+.heroFacts dd {
+  color: #6a655f;
+}
+
+.heroSubtitle {
+  max-width: 60ch;
+  margin: 0;
+  font-size: 1.05rem;
 }
 
 .buttons {
   display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 1.75rem;
+}
+
+.statusPill {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  color: #243127;
+  font-weight: 600;
+}
+
+.statusDot {
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 50%;
+  background: #2f6a42;
+}
+
+.heroFacts {
+  display: grid;
+  gap: 1rem;
+  margin: 1.5rem 0 0;
+}
+
+.heroFacts div {
+  padding-top: 1rem;
+  border-top: 1px solid rgba(41, 35, 29, 0.1);
+}
+
+.heroFacts dd {
+  margin: 0.35rem 0 0;
+  font-size: 0.98rem;
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.metricCard {
+  padding: 1.4rem 1.5rem;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.metricValue {
+  margin: 0;
+  font-size: clamp(2.2rem, 5vw, 3.3rem);
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+
+.metricLabel {
+  margin-top: 0.55rem;
+}
+
+.metricDetail {
+  margin: 0.3rem 0 0;
+  font-size: 0.9rem;
+}
+
+.watchSection {
+  padding: 1.5rem 0 1rem;
+}
+
+.sectionHeading {
+  max-width: 54rem;
+  padding-bottom: 1.5rem;
+}
+
+.sectionTitle {
+  margin: 0.35rem 0 0.75rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.05em;
+}
+
+.sectionLead {
+  margin: 0;
+  max-width: 46rem;
+}
+
+.watchGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.watchCard {
+  padding: 1.5rem;
+  min-height: 16rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.watchTitle {
+  margin: 0.4rem 0 0.75rem;
+  font-size: 1.8rem;
+  letter-spacing: -0.05em;
+}
+
+.inlineLink {
+  color: #1f2430;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(31, 36, 48, 0.2);
+  width: fit-content;
+}
+
+.inlineLink:hover {
+  color: #7f3928;
+  border-color: rgba(127, 57, 40, 0.35);
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 1.5rem 0 1rem;
+  }
+
+  .heroGrid,
+  .metricsGrid,
+  .watchGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .heroMain,
+  .heroAside,
+  .watchCard {
+    border-radius: 24px;
+  }
+
+  .heroTitle {
+    font-size: clamp(2.6rem, 14vw, 4rem);
+  }
 }

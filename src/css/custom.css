@@ -1,30 +1,255 @@
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap');
 
-/* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-color-primary: #a54831;
+  --ifm-color-primary-dark: #95402b;
+  --ifm-color-primary-darker: #883b28;
+  --ifm-color-primary-darkest: #6f2f20;
+  --ifm-color-primary-light: #b1583d;
+  --ifm-color-primary-lighter: #bb6448;
+  --ifm-color-primary-lightest: #cb7c61;
+  --ifm-color-success: #2f6a42;
+  --ifm-color-info: #446075;
+  --ifm-color-warning: #9c6a1d;
+  --ifm-color-danger: #9f3932;
+  --ifm-background-color: #f5f0e8;
+  --ifm-background-surface-color: rgba(255, 250, 243, 0.9);
+  --ifm-navbar-background-color: rgba(245, 240, 232, 0.92);
+  --ifm-footer-background-color: #efe6d9;
+  --ifm-font-family-base: 'Instrument Sans', 'Inter', 'Segoe UI', sans-serif;
+  --ifm-heading-font-family: 'Instrument Sans', 'Inter', 'Segoe UI', sans-serif;
+  --ifm-font-color-base: #1f2430;
+  --ifm-font-color-secondary: #6f6a63;
+  --ifm-heading-color: #1f2430;
+  --ifm-code-font-size: 92%;
+  --ifm-code-font-family: 'IBM Plex Mono', 'Cascadia Mono', monospace;
+  --ifm-global-radius: 20px;
+  --ifm-button-border-radius: 999px;
+  --ifm-card-border-radius: 24px;
+  --ifm-global-border-width: 1px;
+  --ifm-toc-border-color: rgba(41, 35, 29, 0.12);
+  --ifm-hr-border-color: rgba(41, 35, 29, 0.12);
+  --ifm-table-border-color: rgba(41, 35, 29, 0.12);
+  --ifm-menu-color: #4f4a44;
+  --ifm-menu-color-active: #1f2430;
+  --ifm-menu-color-background-active: rgba(165, 72, 49, 0.08);
+  --ifm-link-color: #7f3928;
+  --ifm-link-hover-color: #5f281c;
+  --ifm-line-height-base: 1.55;
+  --ifm-leading: 1.5rem;
+  --ifm-navbar-shadow: inset 0 -1px 0 rgba(41, 35, 29, 0.1);
+  --ifm-global-shadow-lw: 0 18px 50px rgba(77, 55, 33, 0.08);
+  --docusaurus-highlighted-code-line-bg: rgba(165, 72, 49, 0.08);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+html {
+  background:
+    radial-gradient(circle at top left, rgba(165, 72, 49, 0.08), transparent 22%),
+    radial-gradient(circle at right 12% top 14%, rgba(68, 96, 117, 0.08), transparent 16%),
+    linear-gradient(180deg, #fbf7f1 0%, #f5f0e8 100%);
+}
+
+body {
+  font-family: var(--ifm-font-family-base);
+  color: var(--ifm-font-color-base);
+  background: transparent;
+}
+
+main {
+  background: transparent;
+}
+
+.navbar {
+  backdrop-filter: blur(14px);
+}
+
+.navbar__title,
+.navbar__link,
+.menu__link,
+.pagination-nav__label,
+.footer__title {
+  font-family: var(--ifm-heading-font-family);
+}
+
+.navbar__title {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.navbar__item {
+  font-size: 0.95rem;
+}
+
+.theme-doc-sidebar-container,
+.theme-doc-toc-desktop,
+.table-of-contents,
+.card,
+.pagination-nav,
+.footer {
+  border-color: rgba(41, 35, 29, 0.12);
+}
+
+.theme-doc-sidebar-container {
+  background: rgba(251, 247, 241, 0.74);
+  backdrop-filter: blur(12px);
+}
+
+.theme-doc-main {
+  background: transparent;
+}
+
+.theme-doc-markdown {
+  font-size: 1rem;
+}
+
+.menu {
+  font-size: 0.93rem;
+}
+
+.menu__link {
+  border-radius: 12px;
+}
+
+.menu__link--active:not(.menu__link--sublist) {
+  font-weight: 600;
+}
+
+.theme-doc-markdown h1,
+.theme-doc-markdown h2,
+.theme-doc-markdown h3,
+.hero__title {
+  letter-spacing: -0.04em;
+}
+
+.theme-doc-markdown h1 {
+  font-size: clamp(2.35rem, 3.6vw, 3.4rem);
+  margin-bottom: 1.25rem;
+}
+
+.theme-doc-markdown h2 {
+  font-size: clamp(1.7rem, 2.2vw, 2.15rem);
+  margin-top: 2.5rem;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.theme-doc-markdown h3 {
+  font-size: 1.2rem;
+  margin-top: 1.75rem;
+}
+
+.theme-doc-markdown p,
+.theme-doc-markdown li,
+.hero__subtitle,
+.footer__item,
+.pagination-nav__sublabel {
+  color: #4b4640;
+}
+
+.theme-doc-markdown p,
+.theme-doc-markdown li {
+  line-height: 1.7;
+}
+
+.theme-doc-markdown strong {
+  color: #1f2430;
+}
+
+.theme-doc-markdown a:not(.button) {
+  text-decoration-color: rgba(127, 57, 40, 0.28);
+  text-underline-offset: 0.14em;
+}
+
+.theme-doc-markdown blockquote {
+  margin: 1.5rem 0;
+  padding: 0.85rem 1rem;
+  border-left: 2px solid rgba(165, 72, 49, 0.32);
+  background: rgba(255, 250, 243, 0.45);
+  color: #5b5550;
+}
+
+.theme-doc-markdown :not(pre) > code {
+  background: rgba(31, 36, 48, 0.05);
+  border: 1px solid rgba(41, 35, 29, 0.08);
+  border-radius: 8px;
+  padding: 0.15rem 0.35rem;
+}
+
+pre {
+  border: 1px solid rgba(41, 35, 29, 0.08);
+  box-shadow: none;
+}
+
+.button {
+  font-weight: 600;
+  box-shadow: none;
+}
+
+.button.button--secondary {
+  color: #1f2430;
+  background: rgba(31, 36, 48, 0.08);
+  border: 1px solid rgba(31, 36, 48, 0.08);
+}
+
+.button.button--secondary:hover {
+  background: rgba(31, 36, 48, 0.12);
+  border-color: rgba(31, 36, 48, 0.12);
+}
+
+.button.button--primary,
+.pagination-nav__link:hover {
+  border-color: transparent;
+}
+
+.card,
+.pagination-nav__link {
+  background: rgba(255, 250, 243, 0.78);
+  box-shadow: var(--ifm-global-shadow-lw);
+}
+
+.pagination-nav__link {
+  box-shadow: none;
+}
+
+table {
+  background: transparent;
+  box-shadow: none;
+  font-size: 0.96rem;
+}
+
+table thead th {
+  font-weight: 600;
+}
+
+table tr:nth-child(2n) {
+  background: rgba(255, 250, 243, 0.46);
+}
+
+table thead tr {
+  background: rgba(165, 72, 49, 0.05);
+}
+
+.alert {
+  border: 1px solid rgba(41, 35, 29, 0.08);
+  box-shadow: none;
+}
+
+.theme-doc-toc-desktop,
+.table-of-contents {
+  font-size: 0.85rem;
+}
+
+.table-of-contents__link--active {
+  font-weight: 600;
+}
+
+.footer {
+  border-top: 1px solid rgba(41, 35, 29, 0.12);
+}
+
+@media (max-width: 996px) {
+  .theme-doc-sidebar-container {
+    background: #fbf7f1;
+  }
 }

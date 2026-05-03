@@ -5,6 +5,7 @@ import Link from '@docusaurus/Link';
 import styles from './styles.module.css';
 
 type FeatureItem = {
+  kicker: string;
   title: string;
   to: string;
   description: ReactNode;
@@ -12,45 +13,52 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Self-Host Installation',
+    kicker: 'I.',
+    title: 'Self-host installation',
     to: '/docs/installation',
     description: (
       <>
-        Deploy the full MaNoir stack on your own infrastructure. Follow our
-        step-by-step guide to get up and running quickly.
+        Deploy the full MaNoir stack on your infrastructure with a path focused
+        on prerequisites, deployment and first run checks.
       </>
     ),
   },
   {
-    title: 'User Guide',
+    kicker: 'II.',
+    title: 'User guide',
     to: '/docs/user-guide',
     description: (
       <>
-        Learn how to use MaNoir for administration, home automation, daily life
-        management, and tracking your possessions.
+        Navigate administration, home automation, daily life workflows and
+        possession tracking without digging through the codebase.
       </>
     ),
   },
   {
-    title: 'Developer Guide',
+    kicker: 'III.',
+    title: 'Developer guide',
     to: '/docs/developer',
     description: (
       <>
-        Extend MaNoir with custom plugins. Browse the API reference and learn
-        how to package and publish your plugin.
+        Extend MaNoir with plugins, integration points and packaging guidance
+        kept close to the platform conventions.
       </>
     ),
   },
 ];
 
-function Feature({title, to, description}: FeatureItem) {
+function Feature({kicker, title, to, description}: FeatureItem) {
   return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center padding-horiz--md padding-vert--md">
-        <Heading as="h3">
+    <div className={clsx('col col--4', styles.featureColumn)}>
+      <div className={styles.featureCard}>
+        <p className={styles.featureKicker}>{kicker}</p>
+        <Heading as="h3" className={styles.featureTitle}>
           <Link to={to}>{title}</Link>
         </Heading>
-        <p>{description}</p>
+        <p className={styles.featureDescription}>{description}</p>
+        <Link className={styles.featureLink} to={to}>
+          Open section
+        </Link>
       </div>
     </div>
   );
@@ -60,6 +68,12 @@ export default function HomepageFeatures(): ReactNode {
   return (
     <section className={styles.features}>
       <div className="container">
+        <div className={styles.headingRow}>
+          <p className={styles.headingEyebrow}>Le tableau de bord</p>
+          <Heading as="h2" className={styles.headingTitle}>
+            Continuer selon votre besoin.
+          </Heading>
+        </div>
         <div className="row">
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
