@@ -3,17 +3,13 @@
   border-radius: 20px;
   padding: 1.25rem;
   margin: 1.5rem 0;
-  background:
-    radial-gradient(circle at top right, rgba(46, 133, 85, 0.12), transparent 30%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(245, 249, 247, 0.96));
-  box-shadow: 0 20px 40px rgba(22, 35, 29, 0.08);
+  background: var(--mn-tonal);
+  box-shadow: none;
 }
 
 [data-theme='dark'] .builder {
-  background:
-    radial-gradient(circle at top right, rgba(37, 194, 160, 0.16), transparent 30%),
-    linear-gradient(180deg, rgba(18, 24, 21, 0.96), rgba(14, 20, 18, 0.98));
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  background: var(--mn-tonal);
+  box-shadow: none;
 }
 
 .headerRow {
@@ -91,7 +87,7 @@
   margin: 1rem 0 1.2rem;
   padding: 0.9rem 1rem;
   border-radius: 14px;
-  background: rgba(46, 133, 85, 0.08);
+  background: var(--mn-yellow-soft);
   display: grid;
   gap: 0.35rem;
   font-size: 0.94rem;

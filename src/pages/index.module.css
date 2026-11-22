@@ -13,10 +13,10 @@
 .heroAside,
 .metricCard,
 .watchCard {
-  background: rgba(255, 250, 243, 0.76);
-  border: 1px solid rgba(41, 35, 29, 0.12);
+  background: var(--mn-tonal);
+  border: 0;
   border-radius: 28px;
-  box-shadow: 0 24px 80px rgba(77, 55, 33, 0.09);
+  box-shadow: none;
 }
 
 .heroMain {
@@ -25,9 +25,7 @@
 
 .heroAside {
   padding: 1.5rem;
-  background:
-    radial-gradient(circle at top right, rgba(165, 72, 49, 0.08), transparent 26%),
-    rgba(255, 250, 243, 0.76);
+  background: var(--mn-tonal);
 }
 
 .eyebrow,
@@ -36,7 +34,7 @@
 .metricLabel,
 .heroFacts dt {
   margin: 0;
-  color: #9f4d37;
+  color: var(--mn-prune);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.18em;
@@ -46,21 +44,20 @@
 .heroTitle {
   margin: 0.35rem 0 1rem;
   font-size: clamp(3rem, 7vw, 5.25rem);
-  line-height: 0.93;
-  letter-spacing: -0.06em;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
 }
 
 .heroAccent {
-  color: #9c4332;
-  font-style: italic;
-}
+  color: var(--mn-prune);
+  }
 
 .heroSubtitle,
 .sectionLead,
 .watchBody,
 .metricDetail,
 .heroFacts dd {
-  color: #6a655f;
+  color: var(--mn-muted);
 }
 
 .heroSubtitle {
@@ -82,8 +79,8 @@
   gap: 0.55rem;
   padding: 0.7rem 1rem;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.72);
-  color: #243127;
+  background: var(--mn-raised);
+  color: var(--mn-ink);
   font-weight: 600;
 }
 
@@ -91,7 +88,7 @@
   width: 0.65rem;
   height: 0.65rem;
   border-radius: 50%;
-  background: #2f6a42;
+  background: var(--mn-ok);
 }
 
 .heroFacts {
@@ -102,7 +99,7 @@
 
 .heroFacts div {
   padding-top: 1rem;
-  border-top: 1px solid rgba(41, 35, 29, 0.1);
+  border-top: 1px solid var(--mn-line);
 }
 
 .heroFacts dd {
@@ -119,7 +116,7 @@
 
 .metricCard {
   padding: 1.4rem 1.5rem;
-  border-radius: 0;
+  border-radius: 28px;
   box-shadow: none;
 }
 
@@ -127,7 +124,7 @@
   margin: 0;
   font-size: clamp(2.2rem, 5vw, 3.3rem);
   line-height: 1;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.03em;
 }
 
 .metricLabel {
@@ -151,7 +148,7 @@
 .sectionTitle {
   margin: 0.35rem 0 0.75rem;
   font-size: clamp(2rem, 4vw, 3rem);
-  letter-spacing: -0.05em;
+  letter-spacing: -0.02em;
 }
 
 .sectionLead {
@@ -176,20 +173,20 @@
 .watchTitle {
   margin: 0.4rem 0 0.75rem;
   font-size: 1.8rem;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.02em;
 }
 
 .inlineLink {
-  color: #1f2430;
+  color: var(--mn-ink);
   font-weight: 600;
   text-decoration: none;
-  border-bottom: 1px solid rgba(31, 36, 48, 0.2);
+  border-bottom: 1px solid rgba(30, 26, 29, 0.25);
   width: fit-content;
 }
 
 .inlineLink:hover {
-  color: #7f3928;
-  border-color: rgba(127, 57, 40, 0.35);
+  color: var(--mn-prune);
+  border-color: rgba(126, 42, 71, 0.35);
 }
 
 @media screen and (max-width: 996px) {

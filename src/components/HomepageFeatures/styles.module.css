@@ -10,7 +10,7 @@
 .headingEyebrow,
 .featureKicker {
   margin: 0;
-  color: #9f4d37;
+  color: var(--mn-prune);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.18em;
@@ -20,7 +20,7 @@
 .headingTitle {
   margin: 0.35rem 0 0;
   font-size: clamp(1.9rem, 4vw, 2.8rem);
-  letter-spacing: -0.05em;
+  letter-spacing: -0.02em;
 }
 
 .featureColumn {
@@ -34,43 +34,43 @@
   justify-content: space-between;
   min-height: 18rem;
   padding: 1.5rem;
-  background: rgba(255, 250, 243, 0.76);
-  border: 1px solid rgba(41, 35, 29, 0.12);
-  border-radius: 0;
+  background: var(--mn-tonal);
+  border: 0;
+  border-radius: 28px;
 }
 
 .featureTitle {
   margin: 0.45rem 0 0.75rem;
   font-size: 1.7rem;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.02em;
 }
 
 .featureTitle a {
-  color: #1f2430;
+  color: var(--mn-ink);
   text-decoration: none;
 }
 
 .featureTitle a:hover {
-  color: #7f3928;
+  color: var(--mn-prune);
 }
 
 .featureDescription {
   margin: 0;
-  color: #6a655f;
+  color: var(--mn-muted);
 }
 
 .featureLink {
   margin-top: 1.5rem;
   width: fit-content;
-  color: #1f2430;
+  color: var(--mn-ink);
   font-weight: 600;
   text-decoration: none;
-  border-bottom: 1px solid rgba(31, 36, 48, 0.2);
+  border-bottom: 1px solid rgba(30, 26, 29, 0.25);
 }
 
 .featureLink:hover {
-  color: #7f3928;
-  border-color: rgba(127, 57, 40, 0.35);
+  color: var(--mn-prune);
+  border-color: rgba(126, 42, 71, 0.35);
 }
 
 @media screen and (max-width: 996px) {
