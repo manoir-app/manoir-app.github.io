@@ -73,36 +73,42 @@ export default function DockerRunCommandBuilder() {
   const continuation = isWindows ? '`' : '\\';
   const language = isWindows ? 'powershell' : 'bash';
 
+  // Single quotes are the only quoting that is literal in both shells: bash still expands
+  // `$`, backticks, `\` and `!` inside double quotes, and PowerShell expands `$` and backticks.
+  const quote = (value: string) =>
+    isWindows ? `'${value.replace(/'/g, "''")}'` : `'${value.replace(/'/g, "'\\''")}'`;
+  const env = (name: string, value: string | number) => `  --env ${quote(`${name}=${value}`)}`;
+
   const commandLines = [
     'docker run --detach',
-    `  --name "${defaultContainerName}"`,
+    `  --name ${quote(defaultContainerName)}`,
     '  --restart unless-stopped',
     `  --publish ${webPort}:8080`,
-    `  --mount "type=bind,source=${dockerSocketSource},target=/var/run/docker.sock"`,
-    `  --mount "type=bind,source=${homeAutomationRoot},target=/home-automation"`,
-    '  --env "ASPNETCORE_URLS=http://0.0.0.0:8080"',
-    '  --env "DOCKER_HOST=unix:///var/run/docker.sock"',
-    `  --env "HOMEAUTOMATION_APIKEY=${apiKey}"`,
-    `  --env "HOMEAUTOMATION_SECRETS_SALT=${secretsSalt}"`,
-    `  --env "HOMEAUTOMATION_AUTH_JWT_SIGNING_KEY=${jwtSigningKey}"`,
-    ...(mongoImageOverride ? [`  --env "MANOIR_MONGO_IMAGE=${mongoImageOverride}"`] : []),
-    `  --env "MANOIR_CORE_ADMINUI_HOST_PORT=${coreAdminUiPort}"`,
-    `  --env "MANOIR_SHARED_SERVICES_HOST_ROOT_PATH=${sharedServicesHostRootPath}"`,
-    `  --env "Gaia__SharedServicesRootPath=${sharedServicesContainerPath}"`,
-    `  --env "Gaia__PluginRepositoriesRootPath=${pluginRepositoriesContainerPath}"`,
-    `  --env "Gaia__EnsureIntervalSeconds=${ensureIntervalSeconds}"`,
-    '  --env "Gaia__AutoEnsureSharedServicesOnStartup=true"',
-    ...(developmentInstance ? ['  --env "MANOIR_DEVELOPMENT_INSTANCE=true"'] : []),
-    `  "${imageReference}"`,
+    `  --mount ${quote(`type=bind,source=${dockerSocketSource},target=/var/run/docker.sock`)}`,
+    `  --mount ${quote(`type=bind,source=${homeAutomationRoot},target=/home-automation`)}`,
+    env('ASPNETCORE_URLS', 'http://0.0.0.0:8080'),
+    env('DOCKER_HOST', 'unix:///var/run/docker.sock'),
+    env('HOMEAUTOMATION_APIKEY', apiKey),
+    env('HOMEAUTOMATION_SECRETS_SALT', secretsSalt),
+    env('HOMEAUTOMATION_AUTH_JWT_SIGNING_KEY', jwtSigningKey),
+    ...(mongoImageOverride ? [env('MANOIR_MONGO_IMAGE', mongoImageOverride)] : []),
+    env('MANOIR_CORE_ADMINUI_HOST_PORT', coreAdminUiPort),
+    env('MANOIR_SHARED_SERVICES_HOST_ROOT_PATH', sharedServicesHostRootPath),
+    env('Gaia__SharedServicesRootPath', sharedServicesContainerPath),
+    env('Gaia__PluginRepositoriesRootPath', pluginRepositoriesContainerPath),
+    env('Gaia__EnsureIntervalSeconds', ensureIntervalSeconds),
+    env('Gaia__AutoEnsureSharedServicesOnStartup', 'true'),
+    ...(developmentInstance ? [env('MANOIR_DEVELOPMENT_INSTANCE', 'true')] : []),
+    `  ${quote(imageReference)}`,
   ];
 
   const preparationScript =
     !isWindows
       ? [
-          `sudo mkdir -p "${homeAutomationRoot}"`,
-          `sudo mkdir -p "${sharedServicesHostRootPath}"`,
-          `sudo mkdir -p "${pluginRepositoriesHostRootPath}"`,
-          `sudo chown -R "$USER":"$USER" "${homeAutomationRoot}"`,
+          `sudo mkdir -p ${quote(homeAutomationRoot)}`,
+          `sudo mkdir -p ${quote(sharedServicesHostRootPath)}`,
+          `sudo mkdir -p ${quote(pluginRepositoriesHostRootPath)}`,
+          `sudo chown -R "$USER":"$USER" ${quote(homeAutomationRoot)}`,
         ].join('\n')
       : '';
 
